@@ -4,7 +4,7 @@
     <v-container>
       <v-layout row wrap>
       <v-flex v-for="project in this.projects" :key="project.id">
-        <ProjectCard :name=project.name :description=project.description :icon=project.icon></ProjectCard>
+        <ProjectCard :name=project.name :description=project.description :icon=project.icon :url=project.url></ProjectCard>
       </v-flex>
       </v-layout>
     </v-container>
@@ -24,9 +24,9 @@ export default {
   data(){
     return{
     projects:[
-        {name: 'Anagrama', description:'wtf, that´s a game', icon:'https://raw.githubusercontent.com/lurkasf/Anagrama/master/public/icon.png'},
-        {name: 'Anagrama2', description:'wtf, that´s an example', icon:'https://raw.githubusercontent.com/lurkasf/Anagrama/master/public/icon.png'},
-        {name: 'Anagrama3', description:'wtf, that´s an example', icon:'https://raw.githubusercontent.com/lurkasf/Anagrama/master/public/icon.png'},
+        {url: 'https://lurkasf.github.io/Anagrama/', name: 'Anagrama', description:'wtf, that´s a game', icon:'https://raw.githubusercontent.com/lurkasf/Anagrama/master/public/icon.png'},
+        {url: '#', name: 'Exemplo', description:'wtf, that´s an example', icon:'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg'},
+        {url: '#', name: 'Exemplo', description:'wtf, that´s an example', icon:'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg'},
       ]
     }
   }

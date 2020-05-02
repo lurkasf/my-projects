@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-  <v-card max-width="375" v-on:click="viajar(url)" hover shaped>
+  <v-card v-on:click="viajar(url)" hover shaped>
     <v-responsive class="pt-4">
       <v-img :src=icon height="150" width="150"></v-img>
     </v-responsive>

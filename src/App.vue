@@ -1,17 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="background">
+    <Navbar></Navbar>
+    <v-container>
+      <v-layout row wrap>
+      <v-flex v-for="project in this.projects" :key="project.id">
+        <ProjectCard :name=project.name :description=project.description></ProjectCard>
+      </v-flex>
+      </v-layout>
+    </v-container>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProjectCard from './components/ProjectCard'
+import Navbar from './components/Navbar'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ProjectCard,
+    Navbar,
+  },
+  data(){
+    return{
+    projects:[
+        {name: 'Anagrama', description:'wtf, that´s a game'},
+        {name: 'Anagrama2', description:'wtf, that´s an example'},
+        {name: 'Anagrama3', description:'wtf, that´s an example'},
+      ]
+    }
   }
 }
 </script>
@@ -25,4 +42,18 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+html{
+
+  background-color: #242c33;
+  height: auto !important;
+  min-height: 100%
+}
+.cardList{
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
 </style>

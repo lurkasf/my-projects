@@ -42,8 +42,7 @@ export default {
   margin-top: 60px;
 }
 html{
-
-  background-color: #242c33;
+  background-color: #2d4c66;
   height: auto !important;
   min-height: 100%
 }

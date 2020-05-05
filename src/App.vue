@@ -24,8 +24,16 @@ export default {
   data(){
     return{
     projects:[
-        {url: 'https://lurkasf.github.io/Anagrama/', name: 'Anagrama', description:'wtf, that´s a game', icon:'https://raw.githubusercontent.com/lurkasf/Anagrama/master/public/icon.png'},
+        {
+          url: 'https://lurkasf.github.io/Anagrama/',
+          name: 'Anagrama',
+          icon:'https://raw.githubusercontent.com/lurkasf/Anagrama/master/public/icon.png',
+          description:'Jogo do Anagrama o qual consiste em descobrir qual é a palavra que está embaralhada'},
+        
         {url: '#', name: 'Exemplo', description:'wtf, that´s an example', icon:'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg'},
+        {url: '#', name: 'Exemplo', description:'wtf, that´s an example', icon:'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg'},
+        {url: '#', name: 'Exemplo', description:'wtf, that´s an example', icon:'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg'},
+
       ]
     }
   }

@@ -1,17 +1,19 @@
 <template>
-  <div class="background">
-    <Navbar></Navbar>
-    <v-container>
-      <v-layout row wrap align-center>
-      <v-flex v-for="project in this.projects" :key="project.id" sml12 md6 lg4 xl4>
-        <ProjectCard :name=project.name :description=project.description :icon=project.icon :url=project.url></ProjectCard>
-      </v-flex>
-      </v-layout>
-      <div class="banner">
-        <p> Banner para propaganda </p>
-        <div id="adsgoeshere" style="background: grey; padding-top: 20px; text-align: center;" v-html="adsenseContent"></div>
-      </div>
-    </v-container>
+  <div>
+    <div class="background">
+      <Navbar></Navbar>
+      <v-container>
+        <v-layout row wrap align-center>
+        <v-flex v-for="project in this.projects" :key="project.id" sml12 md6 lg4 xl4>
+          <ProjectCard :name=project.name :description=project.description :icon=project.icon :url=project.url></ProjectCard>
+        </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
+    <div class="banner">
+      <p> Banner para propaganda </p>
+    <div id="adsgoeshere" style="background: grey; padding-top: 20px; text-align: center;" v-html="adsenseContent"></div>
+    </div>
   </div>
 </template>
 
@@ -65,7 +67,12 @@ html{
   justify-content: center;
 }
 div.banner { 
-  float: right;
+  right: 0px;
+  padding-top: 10vh;
+  position: fixed;
+  text-align: center;
+  top: 0px;
+  float: right;  
   width: 100px;
   height: 400px; 
   background-color: grey;  

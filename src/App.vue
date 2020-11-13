@@ -7,6 +7,10 @@
         <ProjectCard :name=project.name :description=project.description :icon=project.icon :url=project.url></ProjectCard>
       </v-flex>
       </v-layout>
+      <div class="banner">
+        <p> Banner para propaganda </p>
+        <div id="adsgoeshere" style="background: grey; padding-top: 20px; text-align: center;" v-html="adsenseContent"></div>
+      </div>
     </v-container>
   </div>
 </template>
@@ -29,8 +33,12 @@ export default {
           name: 'Anagrama',
           icon:'https://raw.githubusercontent.com/lurkasf/Anagrama/master/public/icon.png',
           description:'Jogo do Anagrama o qual consiste em descobrir qual é a palavra que está embaralhada'},
-      ]
+      ],
+      adsenseContent: ''
     }
+  },
+  mounted(){
+    this.adsenseContent = document.getElementById('divadsensedisplaynone').innerHTML
   }
 }
 </script>
@@ -55,6 +63,16 @@ html{
   flex-flow: row;
   align-items: center;
   justify-content: center;
+}
+div.banner { 
+  float: right;
+  width: 100px;
+  height: 400px; 
+  background-color: grey;  
+}
+
+#adsgoeshere{
+  background: white;
 }
 
 </style>

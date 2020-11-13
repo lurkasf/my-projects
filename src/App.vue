@@ -3,7 +3,7 @@
     <Navbar></Navbar>
     <v-container>
       <v-layout row wrap align-center>
-      <v-flex v-for="project in this.projects" :key="project.id" sml12 md6 lg6 xl6>
+      <v-flex v-for="project in this.projects" :key="project.id" sml12 md6 lg4 xl4>
         <ProjectCard :name=project.name :description=project.description :icon=project.icon :url=project.url></ProjectCard>
       </v-flex>
       </v-layout>

@@ -10,10 +10,11 @@
         </v-layout>
       </v-container>
     </div>
-    <div class="banner">
+    <div data-mvc-banner="sky-wide"></div>
+    <!-- <div class="banner">
       <p> Banner para propaganda </p>
     <div id="adsgoeshere" style="background: grey; padding-top: 20px; text-align: center;" v-html="adsenseContent"></div>
-    </div>
+    </div> -->
   </div>
 </template>
 

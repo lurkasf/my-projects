@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="background">
-      <Navbar></Navbar>
+      <Navbar @switch-ads="switchAds"></Navbar>
       <v-container>
         <v-layout row wrap align-center>
         <v-flex v-for="project in this.projects" :key="project.id" sml12 md6 lg4 xl4>
@@ -10,11 +10,9 @@
         </v-layout>
       </v-container>
     </div>
-    <div data-mvc-banner="sky-wide"></div>
-    <!-- <div class="banner">
-      <p> Banner para propaganda </p>
-    <div id="adsgoeshere" style="background: grey; padding-top: 20px; text-align: center;" v-html="adsenseContent"></div>
-    </div> -->
+    <div v-if="adsEnabled" class="banner">
+      <div data-mvc-banner="sky-wide" class="magazine-banner"></div>
+    </div>
   </div>
 </template>
 
@@ -30,6 +28,7 @@ export default {
   },
   data(){
     return{
+    enableAds: false,
     projects:[
         {
           url: 'https://lurkasf.github.io/Anagrama/',
@@ -37,12 +36,35 @@ export default {
           icon:'https://raw.githubusercontent.com/lurkasf/Anagrama/master/public/icon.png',
           description:'Jogo do Anagrama o qual consiste em descobrir qual é a palavra que está embaralhada'},
       ],
-      adsenseContent: ''
     }
   },
-  mounted(){
-    this.adsenseContent = document.getElementById('divadsensedisplaynone').innerHTML
+  computed:{
+    adsEnabled(){
+      return this.enableAds
+    }
+  },
+  watch:{
+    enableAds: function(newer){
+      if(newer){
+        this.startBanner('bluestorm')
+      }
+    }
+
+  },
+  methods:{
+    startBanner(storename){
+      var b = document.createElement('script')
+      b.type = 'text/javascript'
+      b.async = true
+      b.src = 'https://www.magazinevoce.com.br/js/banner.js?store='+ storename
+      var s = document.getElementsByTagName('script')[0]
+      s.parentNode.insertBefore(b, s)
+    },
+    switchAds(value){
+      this.enableAds = value
+    }
   }
+
 }
 </script>
 
@@ -55,11 +77,13 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 html{
   background-color: #2d4c66;
   height: auto !important;
   min-height: 100%
 }
+
 .cardList{
   display: flex;
   flex-direction: row;
@@ -67,20 +91,14 @@ html{
   align-items: center;
   justify-content: center;
 }
+
 div.banner { 
-  right: 0px;
-  padding-top: 10vh;
+  right: 6px;
   position: fixed;
   text-align: center;
-  top: 0px;
+  top: 10%;
   float: right;  
-  width: 100px;
-  height: 400px; 
-  background-color: grey;  
-}
-
-#adsgoeshere{
-  background: white;
+  background-color: white;
 }
 
 </style>

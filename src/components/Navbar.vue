@@ -14,11 +14,18 @@
 
       <v-spacer></v-spacer>
 
-      <!--<v-checkbox
+      <!-- <v-checkbox
         v-model="collapseOnScroll"
         color="white"
         hide-details
-      ></v-checkbox>-->
+      ></v-checkbox> -->
+      <v-checkbox
+        v-model="ads"
+        label="Ads"
+        color="red"
+        hide-details
+        v-on:click="$emit('switch-ads', ads)"
+      ></v-checkbox>
     </v-app-bar>
     <v-sheet
       id="scrolling-techniques-6"
@@ -34,6 +41,7 @@
   export default {
     data: () => ({
       collapseOnScroll: true,
+      ads:false
     }),
   }
 </script>

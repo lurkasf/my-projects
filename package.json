@@ -14,9 +14,9 @@
     "clear-push-page": "npm run clear-to-push && npm run build-deploy"
   },
   "dependencies": {
-    "core-js": "^3.8.0",
+    "core-js": "^3.8.3",
     "vue": "^2.6.12",
-    "vuetify": "^2.3.19"
+    "vuetify": "^2.4.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
@@ -25,9 +25,9 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "sass": "^1.29.0",
+    "sass": "^1.32.5",
     "sass-loader": "^8.0.0",
-    "vue-cli-plugin-vuetify": "^2.0.7",
+    "vue-cli-plugin-vuetify": "^2.0.9",
     "vue-template-compiler": "^2.6.12",
     "vuetify-loader": "^1.6.0"
   },
